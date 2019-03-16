@@ -1,0 +1,23 @@
+{
+	"FileVersion": 3,
+	"Version": 1,
+	"VersionName": "1.0",
+	"FriendlyName": "Duplicate Special",
+	"Description": "Duplicates objects with given transforms.",
+	"Category": "Other",
+	"CreatedBy": "Isaac Madsen",
+	"CreatedByURL": "",
+	"DocsURL": "",
+	"MarketplaceURL": "",
+	"SupportURL": "",
+	"EngineVersion": "4.21.0",
+	"CanContainContent": false,
+	"Installed": true,
+	"Modules": [
+		{
+			"Name": "DuplicateSpecial",
+			"Type": "Editor",
+			"LoadingPhase": "Default"
+		}
+	]
+}
