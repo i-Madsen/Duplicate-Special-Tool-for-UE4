@@ -19,8 +19,8 @@ void EmptyLinkFunctionForGeneratedCodeDuplicateSpecial_init() {}
 			static const UE4CodeGen_Private::FPackageParams PackageParams = {
 				"/Script/DuplicateSpecial",
 				PKG_CompiledIn | 0x00000040,
-				0x27B85E0A,
-				0x4D72ACC0,
+				0x28B2F2F5,
+				0x5111DED9,
 				nullptr, 0,
 				METADATA_PARAMS(nullptr, 0)
 			};

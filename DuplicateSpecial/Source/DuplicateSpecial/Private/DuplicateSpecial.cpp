@@ -11,8 +11,8 @@ void FDuplicateSpecialModule::StartupModule()
 	// This code will execute after your module is loaded into memory; the exact timing is specified in the .uplugin file per-module
 	FEditorModeRegistry::Get().RegisterMode<FDuplicateSpecialEdMode>(
 		FDuplicateSpecialEdMode::EM_DuplicateSpecialModeId,
-		LOCTEXT("DuplicateSpecialModeName", "Layout Prefabs"),
-		FSlateIcon(FDuplicateSpecialStyle::Get().GetStyleSetName(), "DuplicateSpecialEdMode::EM_DuplicateSpecialEdModeId", "FDuplicateSpecialEdMode.Small"),
+		LOCTEXT("DuplicateSpecialModeName", "Duplicate Special"),
+		FSlateIcon(FDuplicateSpecialStyle::Get().GetStyleSetName(), "DuplicateSpecialMode", "DuplicateSpecialMode.Small"),
 		true);
 }
 

@@ -1,29 +1,25 @@
 // Copyright (c) 2019 Isaac Madsen (isaacmadsen.com).  Distributed under the MIT License (MIT) (See accompanying file LICENSE.txt or copy at http://opensource.org/licenses/MIT)
 
 #include "DuplicateSpecialSettings.h"
-//#include "UnrealType.h"
 
 UDuplicateSpecialSettings::UDuplicateSpecialSettings(const FObjectInitializer& ObjectInitializer)
 	: Super(ObjectInitializer),
 	bTranslateRelative(true),
-	TranslateX(10.0f),
-	TranslateY(10.0f),
-	TranslateZ(10.0f),
+	Translate(0.0f),
 	bRotateRelative(true),
-	RotationX(0.0f),
-	RotationY(0.0f),
-	RotationZ(0.0f),
+	Rotation(0.0f),
 	bScaleRelative(true),
-	ScaleX(1.0f),
-	ScaleY(1.0f),
-	ScaleZ(1.0f),
-	bSelectDuplicated(true)
-	//EnumDataExample(EDuplicateSpecialEnumDataExample::Foo)
-{
-	//const float TranslateXClampMin = 1.0f, TranslateXClampMax = 4096.0f;
+	Scale(1.0f),
+	bSelectDuplicated(true),
+	bCreateNewOutlinerFolder(false),
+	FolderPathName("MyNewFolder/MyNewSubFolder"),
+	bAttachToParent(false),
+	NumberOfCopies(1)
 
-	boxMin = -3E+38f;
-	boxMax = 3E+38;
+{
+
+	boxMin = -100000.0f;
+	boxMax = 100000.0f;
 
 }
 
@@ -32,81 +28,49 @@ UDuplicateSpecialSettings::~UDuplicateSpecialSettings()
 }
 
 // Set methods for transforms
-void UDuplicateSpecialSettings::SetTranslateX(float InRadius)
+void UDuplicateSpecialSettings::SetTranslate(FVector InputVar)
 {
-	TranslateX = (float)FMath::Clamp(InRadius, boxMin, boxMax);
+	Translate = InputVar.BoundToBox(FVector(boxMin), FVector(boxMax));
 }
 
-void UDuplicateSpecialSettings::SetTranslateY(float InRadius)
+void UDuplicateSpecialSettings::SetRotation(FRotator InputVar)
 {
-	TranslateY = (float)FMath::Clamp(InRadius, boxMin, boxMax);
+	Rotation.Roll = (float)FMath::Clamp(InputVar.Roll, boxMin, boxMax);
+	Rotation.Pitch = (float)FMath::Clamp(InputVar.Pitch, boxMin, boxMax);
+	Rotation.Yaw = (float)FMath::Clamp(InputVar.Yaw, boxMin, boxMax);
 }
 
-void UDuplicateSpecialSettings::SetTranslateZ(float InRadius)
+void UDuplicateSpecialSettings::SetScale(FVector InputVar)
 {
-	TranslateZ = (float)FMath::Clamp(InRadius, boxMin, boxMax);
+	Scale = InputVar.BoundToBox(FVector(boxMin), FVector(boxMax));
 }
 
-void UDuplicateSpecialSettings::SetRotationX(float InRadius)
+void UDuplicateSpecialSettings::SetNumberOfCopies(int InTimes)
 {
-	RotationX = (float)FMath::Clamp(InRadius, boxMin, boxMax);
-}
-
-void UDuplicateSpecialSettings::SetRotationY(float InRadius)
-{
-	RotationY = (float)FMath::Clamp(InRadius, boxMin, boxMax);
-}
-
-void UDuplicateSpecialSettings::SetRotationZ(float InRadius)
-{
-	RotationZ = (float)FMath::Clamp(InRadius, boxMin, boxMax);
-}
-
-void UDuplicateSpecialSettings::SetScaleX(float InRadius)
-{
-	ScaleX = (float)FMath::Clamp(InRadius, boxMin, boxMax);
-}
-
-void UDuplicateSpecialSettings::SetScaleY(float InRadius)
-{
-	ScaleY = (float)FMath::Clamp(InRadius, boxMin, boxMax);
-}
-
-void UDuplicateSpecialSettings::SetScaleZ(float InRadius)
-{
-	ScaleZ = (float)FMath::Clamp(InRadius, boxMin, boxMax);
+	NumberOfCopies = (int)FMath::Clamp(InTimes, 1, 100000);
 }
 
 // Update the values of the transform variables on change
 void UDuplicateSpecialSettings::PostEditChangeProperty(struct FPropertyChangedEvent& PropertyChangedEvent)
 {
-	if (PropertyChangedEvent.Property && PropertyChangedEvent.Property->GetFName() == GET_MEMBER_NAME_CHECKED(UDuplicateSpecialSettings, TranslateX))
+	if (PropertyChangedEvent.Property && ( PropertyChangedEvent.Property->GetFName() == FName(TEXT("X")) || 
+										   PropertyChangedEvent.Property->GetFName() == FName(TEXT("Y")) ||
+										   PropertyChangedEvent.Property->GetFName() == FName(TEXT("Z")) ) )
 	{
-		TranslateX = (float)FMath::Clamp(TranslateX, boxMin, boxMax);
-	} else if (PropertyChangedEvent.Property && PropertyChangedEvent.Property->GetFName() == GET_MEMBER_NAME_CHECKED(UDuplicateSpecialSettings, TranslateY))
+
+			SetTranslate(Translate);
+			SetScale(Scale);
+
+	} else if (PropertyChangedEvent.Property && ( PropertyChangedEvent.Property->GetFName() == FName(TEXT("Roll"))  ||
+												  PropertyChangedEvent.Property->GetFName() == FName(TEXT("Pitch")) ||
+												  PropertyChangedEvent.Property->GetFName() == FName(TEXT("Yaw"))   ) )
 	{
-		TranslateY = (float)FMath::Clamp(TranslateY, boxMin, boxMax);
-	} else if (PropertyChangedEvent.Property && PropertyChangedEvent.Property->GetFName() == GET_MEMBER_NAME_CHECKED(UDuplicateSpecialSettings, TranslateZ))
+
+		SetRotation(Rotation);
+
+	} else if (PropertyChangedEvent.Property && PropertyChangedEvent.Property->GetFName() == GET_MEMBER_NAME_CHECKED(UDuplicateSpecialSettings, NumberOfCopies))
 	{
-		TranslateZ = (float)FMath::Clamp(TranslateZ, boxMin, boxMax);
-	} else if (PropertyChangedEvent.Property && PropertyChangedEvent.Property->GetFName() == GET_MEMBER_NAME_CHECKED(UDuplicateSpecialSettings, RotationX))
-	{
-		RotationX = (float)FMath::Clamp(RotationX, boxMin, boxMax);
-	} else if (PropertyChangedEvent.Property && PropertyChangedEvent.Property->GetFName() == GET_MEMBER_NAME_CHECKED(UDuplicateSpecialSettings, RotationY))
-	{
-		RotationY = (float)FMath::Clamp(RotationY, boxMin, boxMax);
-	} else if (PropertyChangedEvent.Property && PropertyChangedEvent.Property->GetFName() == GET_MEMBER_NAME_CHECKED(UDuplicateSpecialSettings, RotationZ))
-	{
-		RotationZ = (float)FMath::Clamp(RotationZ, boxMin, boxMax);
-	} else if (PropertyChangedEvent.Property && PropertyChangedEvent.Property->GetFName() == GET_MEMBER_NAME_CHECKED(UDuplicateSpecialSettings, ScaleX))
-	{
-		ScaleX = (float)FMath::Clamp(ScaleX, boxMin, boxMax);
-	} else if (PropertyChangedEvent.Property && PropertyChangedEvent.Property->GetFName() == GET_MEMBER_NAME_CHECKED(UDuplicateSpecialSettings, ScaleY))
-	{
-		ScaleY = (float)FMath::Clamp(ScaleY, boxMin, boxMax);
-	} else if (PropertyChangedEvent.Property && PropertyChangedEvent.Property->GetFName() == GET_MEMBER_NAME_CHECKED(UDuplicateSpecialSettings, ScaleZ))
-	{
-		ScaleZ = (float)FMath::Clamp(ScaleZ, boxMin, boxMax);
+		NumberOfCopies = (int)FMath::Clamp(NumberOfCopies, 1, 100000);
 	}
 }
 

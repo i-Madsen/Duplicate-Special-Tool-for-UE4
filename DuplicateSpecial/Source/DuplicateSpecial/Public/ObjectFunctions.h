@@ -7,130 +7,127 @@
 #include "DuplicateSpecialSettings.h"
 
 /*
-Stores all of the transform values and the booleans associated with them
+Stores all of the duplication options, the transform values, and the booleans associated with transform options
 dictating whether to use them based on local or world space.
 
 Get and Set functions are defined for these variables.
 */
+
+namespace DuplicationOptions {
+
+
+	static bool selectDuplicated = true;
+	static bool createNewOutlinerFolder = false;
+	static FName folderPathName = "e.g. MyNewFolder/Objects";
+	static bool attachToParent = false;
+	static int numberOfCopies = 1;
+
+	static UDuplicateSpecialSettings* SettingsRef;
+
+	void SetSelectDuplicated(bool inputBool)
+	{
+		DuplicationOptions::selectDuplicated = inputBool;
+	}
+
+	bool GetSelectDuplicated()
+	{
+		selectDuplicated = SettingsRef->GetBSelectDuplicated();
+		return selectDuplicated;
+	}
+
+	void SetCreateNewOutlinerFolder(bool inputBool)
+	{
+		DuplicationOptions::createNewOutlinerFolder = inputBool;
+	}
+
+	bool GetCreateNewOutlinerFolder()
+	{
+		createNewOutlinerFolder = SettingsRef->GetBCreateNewOutlinerFolder();
+		return createNewOutlinerFolder;
+	}
+
+	void SetFolderPathName(FName inputText)
+	{
+		DuplicationOptions::folderPathName = inputText;
+	}
+
+	FName GetFolderPathName()
+	{
+		folderPathName = SettingsRef->GetFolderPathName();
+		return folderPathName;
+	}
+
+	void SetAttachToParent(bool inputBool)
+	{
+		DuplicationOptions::attachToParent = inputBool;
+	}
+
+	bool GetAttachToParent()
+	{
+		attachToParent = SettingsRef->GetBAttachToParent();
+		return attachToParent;
+	}
+
+
+	void SetNumberOfCopies(int InputVar)
+	{
+		DuplicationOptions::numberOfCopies = InputVar;
+	}
+
+	float GetNumberOfCopies()
+	{
+		numberOfCopies = SettingsRef->GetNumberOfCopies();
+		return numberOfCopies;
+	}
+
+
+}
+
+
 namespace ObjectTransforms {
 
 	static TArray<AActor*> ClonedActors;
 
-	static float locX = 0;
-	static float locY = 0;
-	static float locZ = 0;
-	static float rotX = 0;
-	static float rotY = 0;
-	static float rotZ = 0;
-	static float scaleX = 0;
-	static float scaleY = 0;
-	static float scaleZ = 0;
+	static FVector loc = FVector(0);
+	static FRotator rot = FRotator(0);
+	static FVector scale = FVector(0);
 
 	static bool transRel = true;
 	static bool rotateRel = true;
 	static bool scaleRel = true;
-	static bool selectDuplicated = true;
 
-	static UDuplicateSpecialSettings* SettingsRef;
-
-	// Set and Get functions for transform varaibles
-	void SetLocationX(float inputVar)
+	// Set and Get functions for transform variables
+	void SetLocation(FVector InputVar)
 	{
-		ObjectTransforms::locX = inputVar;
+		ObjectTransforms::loc = InputVar;
 	}
 
-	float GetLocationX()
+	FVector GetLocation()
 	{
-		locX = SettingsRef->GetTranslateX();
-		return locX;
+		loc = DuplicationOptions::SettingsRef->GetTranslate();
+		return loc;
 	}
 
-	void SetLocationY(float inputVar)
+	void SetRotation(FRotator InputVar)
 	{
-		ObjectTransforms::locY = inputVar;
+		ObjectTransforms::rot = InputVar;
 	}
 
-	float GetLocationY()
+	FRotator GetRotation()
 	{
-		locY = SettingsRef->GetTranslateY();
-		return locY;
+		rot = DuplicationOptions::SettingsRef->GetRotation();
+		return rot;
 	}
 
-	void SetLocationZ(float inputVar)
+	void SetScale(FVector InputVar)
 	{
-		ObjectTransforms::locZ = inputVar;
+		ObjectTransforms::scale = InputVar;
 	}
 
-	float GetLocationZ()
+	FVector GetScale()
 	{
-		locZ = SettingsRef->GetTranslateZ();
-		return locZ;
-	}
-
-	void SetRotationX(float inputVar)
-	{
-		ObjectTransforms::rotX = inputVar;
-	}
-
-	float GetRotationX()
-	{
-		rotX = SettingsRef->GetRotationX();
-		return rotX;
-	}
-
-	void SetRotationY(float inputVar)
-	{
-		ObjectTransforms::rotY = inputVar;
-	}
-
-	float GetRotationY()
-	{
-		rotY = SettingsRef->GetRotationY();
-		return rotY;
-	}
-
-	void SetRotationZ(float inputVar)
-	{
-		ObjectTransforms::rotZ = inputVar;
-	}
-
-	float GetRotationZ()
-	{
-		rotZ = SettingsRef->GetRotationZ();
-		return rotZ;
-	}
-
-	void SetScaleX(float inputVar)
-	{
-		ObjectTransforms::scaleX = inputVar;
-	}
-
-	float GetScaleX()
-	{
-		scaleX = SettingsRef->GetScaleX();
-		return scaleX;
-	}
-
-	void SetScaleY(float inputVar)
-	{
-		ObjectTransforms::scaleY = inputVar;
-	}
-
-	float GetScaleY()
-	{
-		scaleY = SettingsRef->GetScaleY();
-		return scaleY;
-	}
-
-	void SetScaleZ(float inputVar)
-	{
-		ObjectTransforms::scaleZ = inputVar;
-	}
-
-	float GetScaleZ()
-	{
-		scaleZ = SettingsRef->GetScaleZ();
-		return scaleZ;
+		scale = DuplicationOptions::SettingsRef->GetScale();
+		return scale;
 	}
 
 
@@ -141,7 +138,7 @@ namespace ObjectTransforms {
 
 	bool GetTransRel()
 	{
-		transRel = SettingsRef->GetBTranslateRelative();
+		transRel = DuplicationOptions::SettingsRef->GetBTranslateRelative();
 		return transRel;
 	}
 
@@ -152,7 +149,7 @@ namespace ObjectTransforms {
 
 	bool GetRotateRel()
 	{
-		rotateRel = SettingsRef->GetBRotateRelative();
+		rotateRel = DuplicationOptions::SettingsRef->GetBRotateRelative();
 		return rotateRel;
 	}
 
@@ -163,27 +160,20 @@ namespace ObjectTransforms {
 
 	bool GetScaleRel()
 	{
-		scaleRel = SettingsRef->GetBScaleRelative();
+		scaleRel = DuplicationOptions::SettingsRef->GetBScaleRelative();
 		return scaleRel;
 	}
 
-	void SetSelectDuplicated(bool inputBool)
-	{
-		ObjectTransforms::selectDuplicated = inputBool;
-	}
-
-	bool GetSelectDuplicated()
-	{
-		selectDuplicated = SettingsRef->GetBSelectDuplicated();
-		return selectDuplicated;
-	}
 }
+
 
 static AActor* CloneActor(AActor* InputActor);
 static void TransformRelative(AActor* InputActor, FVector LocationOffset, FRotator RotationOffset, FVector ScaleAmount);
 static void TranslateRelative(AActor* InputActor, FVector LocationOffset);
 static void RotateRelative(AActor* InputActor, FRotator RotationOffset);
-static void ScaleRelative(AActor* InputActor, FVector ScaleAmount);
+static void ScaleRelative(AActor* InputActor, FVector ScaleAmount, FVector BaseScale);
 static void TranslateWorld(AActor* InputActor, FVector LocationOffset);
 static void RotateWorld(AActor* InputActor, FRotator RotationOffset);
 static void ScaleWorld(AActor* InputActor, FVector ScaleAmount);
+static AActor* GetHighestAttachedParent(AActor* InputActor);
+static FString GetIncrementedNumberLabel(FString ActorLabel, int incrementBy);
