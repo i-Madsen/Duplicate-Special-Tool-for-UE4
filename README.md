@@ -14,7 +14,7 @@ This tool is meant to be used with modular creation kits or blueprints that will
 Once the plugin has been enabled, navigate to its section in the ‘Modes’ tab of the editor. Then, select the actor(s) you would like to duplicate and select/input your desired duplication settings: 
 
 
-Transform Options 
+### Transform Options 
 
 Relative Translation – If enabled, adds a local space positional offset to the duplicated actor(s). Otherwise, adds a world space positional offset. 
 
@@ -23,24 +23,19 @@ Relative Rotation – If enabled, adds local space rotation to the duplicated ac
 Relative Scale – If enabled, multiplies the relative scale of the duplicated actor(s). Otherwise, sets the scale of the actor(s). 
 
 
-Duplication Options 
+### Duplication Options 
 
 Select Duplicated – If enabled, after the duplication process finishes the original actor(s) will be deselected and the newly duplicated actor(s) will be selected. 
 
 Create New Outliner Folder – If enabled, duplicated actors will be placed in the World Outliner under the given folder path name. 
-
-   Note that if a folder with that path already exists, the actor(s) will be moved under that folder and no new folder will be created. 
-
-   Also note that you can create new subfolders (e.g. MyFolder/MyNewSubfolder). 
-
-   If enabled simultaneously with ‘Attach to Parent,’ the highest root object will be moved into the folder. 
+- Note that if a folder with that path already exists, the actor(s) will be moved under that folder and no new folder will be created. 
+- Also note that you can create new subfolders (e.g. MyFolder/MyNewSubfolder). 
+- If enabled simultaneously with ‘Attach to Parent,’ the highest root object will be moved into the folder. 
 
 Attach to Parent – If enabled, attaches each duplicated actor to the actor it was duplicated from with a wielded simulated body. 
 
 Number of Copies – How many times to run the duplication process. 
-
-
-If enabled simultaneously with ‘Select Duplicated,’ the selection will be cleared and set to the newly duplicated actor(s) at the end of each cycle of the duplication loop which is useful when creating environment sections with high repitition (such as floors, walls, stairs, etc.). 
+- If enabled simultaneously with ‘Select Duplicated,’ the selection will be cleared and set to the newly duplicated actor(s) at the end of each cycle of the duplication loop which is useful when creating environment sections with high repitition (such as floors, walls, stairs, etc.). 
 
 With all desired actors selected, options set, and values input, click the ‘Duplicate’ button to run the Duplicate Special tool. 
 
