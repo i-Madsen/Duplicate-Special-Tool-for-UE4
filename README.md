@@ -45,9 +45,11 @@ With all desired actors selected, options set, and values input, click the ‘Du
 
 GUI – This tool creates a new Editor Mode in the ‘Modes’ tab that uses checkboxes and number and text fields to take user input for duplication options. 
 
-![Image of Tool GUI](https://isaacmadsen/duplicate_special/duplicate_special_GUI.png)
+![Image of Tool GUI](https://github.com/i-Madsen/Duplicate-Special-Tool-for-UE4/blob/master/imgs/duplicate_special_GUI.png)
 
 Duplication Functionality – The tool is written in C++ as an Editor Mode plugin. 
+
+![Image of Tool Flowchart](https://github.com/i-Madsen/Duplicate-Special-Tool-for-UE4/blob/master/imgs/duplicate_special_Flowchart.png)
 
 
 
