@@ -49,7 +49,7 @@ GUI – This tool creates a new Editor Mode in the ‘Modes’ tab that uses che
 
 Duplication Functionality – The tool is written in C++ as an Editor Mode plugin. 
 
-![Image of Tool Flowchart](https://github.com/i-Madsen/Duplicate-Special-Tool-for-UE4/blob/master/imgs/duplicate_special_Flowchart.png)
+![Image of Tool Flowchart](https://github.com/i-Madsen/Duplicate-Special-Tool-for-UE4/blob/master/imgs/duplicate_special_flowchart.png)
 
 
 
