@@ -19,8 +19,8 @@ public:
 		const FVector2D Icon40x40(40.0f, 40.0f);
 		SetContentRoot(IPluginManager::Get().FindPlugin("DuplicateSpecial")->GetBaseDir() / TEXT("Resources"));
 
-		Set("DuplicateSpecialMode", new FSlateImageBrush(RootToContentDir(TEXT("Icon128.png")), Icon40x40));
-		Set("DuplicateSpecialMode.Small", new FSlateImageBrush(RootToContentDir(TEXT("Icon128.png")), Icon20x20));
+		Set("DuplicateSpecialMode", new FSlateImageBrush(RootToContentDir(TEXT("DuplicateSpecial_Icon.png")), Icon40x40));
+		Set("DuplicateSpecialMode.Small", new FSlateImageBrush(RootToContentDir(TEXT("DuplicateSpecial_Icon.png")), Icon20x20));
 
 		FSlateStyleRegistry::RegisterSlateStyle(*this);
 	}

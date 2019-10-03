@@ -43,6 +43,9 @@ void FDuplicateSpecialEdMode::Enter()
 	// Call parent implementation
 	FEdMode::Enter();
 
+	// Load UI settings from config file
+	Settings->Load();
+
 	if (!Toolkit.IsValid() && UsesToolkits())
 	{
 		Toolkit = MakeShareable(new FDuplicateSpecialEdModeToolkit);
@@ -59,6 +62,9 @@ void FDuplicateSpecialEdMode::Exit()
 		FToolkitManager::Get().CloseToolkit(Toolkit.ToSharedRef());
 		Toolkit.Reset();
 	}
+
+	// Save UI settings to config file
+	Settings->Save();
 
 	// Call base Exit method to ensure proper cleanup
 	FEdMode::Exit();

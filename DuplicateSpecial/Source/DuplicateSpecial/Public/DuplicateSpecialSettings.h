@@ -38,6 +38,9 @@ public:
 	int GetNumberOfCopies() const { return NumberOfCopies; }
 	void SetNumberOfCopies(int InTimes);
 
+	void Load();
+	void Save();
+
 protected:
 	/** If true, uses AddActorLocalOffset(). If false, uses AddActorWorldOffset(). */
 	UPROPERTY(EditAnywhere, Category = "Transforms", meta = (DisplayName = "Relative Translation"))

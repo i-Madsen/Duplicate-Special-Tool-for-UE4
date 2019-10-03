@@ -78,7 +78,7 @@ void SDuplicateSpecialTools::Construct(const FArguments& InArgs)
 
 			// Let editor know that we're about to do something that we want to undo/redo
 			GEditor->BeginTransaction(LOCTEXT("MoveActorsTransactionName", "MoveActors"));
-			
+
 			// Vector to store actors to append a number to their name
 			vector<vector<AActor*>> NamingVector;
 
@@ -238,7 +238,7 @@ void SDuplicateSpecialTools::Construct(const FArguments& InArgs)
 			+ SVerticalBox::Slot()
 		.Padding(15, 12, 0, 12)
 
-	+ SVerticalBox::Slot()
+		+ SVerticalBox::Slot()
 		.AutoHeight()
 		[
 			DetailsView.ToSharedRef()

@@ -82,7 +82,7 @@ static AActor* GetHighestAttachedParent(AActor* InputActor)
 }
 
 // Finds what number is at the end of the given actor's label, increments that number, that returns the incremented FString
-static FString GetIncrementedNumberLabel(FString ActorLabel, int incrementBy) 
+static FString GetIncrementedNumberLabel(FString ActorLabel, int incrementBy)
 {
 	int i = ActorLabel.Len();
 	bool stillGettingNums = true;
