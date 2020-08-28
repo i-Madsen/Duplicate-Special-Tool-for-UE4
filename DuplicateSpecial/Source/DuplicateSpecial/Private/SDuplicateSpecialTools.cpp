@@ -60,8 +60,8 @@ void SDuplicateSpecialTools::Construct(const FArguments& InArgs)
 	DetailsView->SetIsPropertyReadOnlyDelegate(FIsPropertyReadOnly::CreateSP(this, &SDuplicateSpecialTools::IsReadOnlyPropertyOnDetailCustomization));
 
 	// Get a reference to Settings
-	UDuplicateSpecialSettings* Settings = NewObject<UDuplicateSpecialSettings>(GetTransientPackage(), *LOCTEXT("SettingsName", "DuplicateSpecialEdMode Settings").ToString());
-	DuplicationOptions::SettingsRef = Settings;
+	UDuplicateSpecialSettings* duplicateSettings = NewObject<UDuplicateSpecialSettings>(GetTransientPackage(), *LOCTEXT("SettingsName", "DuplicateSpecialEdMode Settings").ToString());
+	DuplicationOptions::SettingsRef = duplicateSettings;
 
 
 	struct Locals

@@ -1,4 +1,4 @@
-// Copyright 1998-2018 Epic Games, Inc. All Rights Reserved.
+// Copyright Epic Games, Inc. All Rights Reserved.
 /*===========================================================================
 	Generated code exported from UnrealHeaderTool.
 	DO NOT modify this manually! Edit the corresponding .h files instead!
@@ -101,14 +101,16 @@ void EmptyLinkFunctionForGeneratedCodeDuplicateSpecialSettings() {}
 #if WITH_METADATA
 	const UE4CodeGen_Private::FMetaDataPairParam Z_Construct_UClass_UDuplicateSpecialSettings_Statics::NewProp_NumberOfCopies_MetaData[] = {
 		{ "Category", "Duplication Options" },
+		{ "Comment", "/** How many times to run the duplication process. Typically should be used with Select Duplicated set to true. */" },
 		{ "ModuleRelativePath", "Public/DuplicateSpecialSettings.h" },
 		{ "ToolTip", "How many times to run the duplication process. Typically should be used with Select Duplicated set to true." },
 	};
 #endif
-	const UE4CodeGen_Private::FUnsizedIntPropertyParams Z_Construct_UClass_UDuplicateSpecialSettings_Statics::NewProp_NumberOfCopies = { UE4CodeGen_Private::EPropertyClass::Int, "NumberOfCopies", RF_Public|RF_Transient|RF_MarkAsNative, (EPropertyFlags)0x0020080000000001, 1, nullptr, STRUCT_OFFSET(UDuplicateSpecialSettings, NumberOfCopies), METADATA_PARAMS(Z_Construct_UClass_UDuplicateSpecialSettings_Statics::NewProp_NumberOfCopies_MetaData, ARRAY_COUNT(Z_Construct_UClass_UDuplicateSpecialSettings_Statics::NewProp_NumberOfCopies_MetaData)) };
+	const UE4CodeGen_Private::FUnsizedIntPropertyParams Z_Construct_UClass_UDuplicateSpecialSettings_Statics::NewProp_NumberOfCopies = { "NumberOfCopies", nullptr, (EPropertyFlags)0x0020080000000001, UE4CodeGen_Private::EPropertyGenFlags::Int, RF_Public|RF_Transient|RF_MarkAsNative, 1, STRUCT_OFFSET(UDuplicateSpecialSettings, NumberOfCopies), METADATA_PARAMS(Z_Construct_UClass_UDuplicateSpecialSettings_Statics::NewProp_NumberOfCopies_MetaData, UE_ARRAY_COUNT(Z_Construct_UClass_UDuplicateSpecialSettings_Statics::NewProp_NumberOfCopies_MetaData)) };
 #if WITH_METADATA
 	const UE4CodeGen_Private::FMetaDataPairParam Z_Construct_UClass_UDuplicateSpecialSettings_Statics::NewProp_bAttachToParent_MetaData[] = {
 		{ "Category", "Duplication Options" },
+		{ "Comment", "/** Attaches duplicates to the actor(s) they were duplicated from with wielded simulated bodies. */" },
 		{ "DisplayName", "Attach to Parent" },
 		{ "ModuleRelativePath", "Public/DuplicateSpecialSettings.h" },
 		{ "ToolTip", "Attaches duplicates to the actor(s) they were duplicated from with wielded simulated bodies." },
@@ -118,19 +120,21 @@ void EmptyLinkFunctionForGeneratedCodeDuplicateSpecialSettings() {}
 	{
 		((UDuplicateSpecialSettings*)Obj)->bAttachToParent = 1;
 	}
-	const UE4CodeGen_Private::FBoolPropertyParams Z_Construct_UClass_UDuplicateSpecialSettings_Statics::NewProp_bAttachToParent = { UE4CodeGen_Private::EPropertyClass::Bool, "bAttachToParent", RF_Public|RF_Transient|RF_MarkAsNative, (EPropertyFlags)0x0020080000000001, 1, nullptr, sizeof(bool), UE4CodeGen_Private::ENativeBool::Native, sizeof(UDuplicateSpecialSettings), &Z_Construct_UClass_UDuplicateSpecialSettings_Statics::NewProp_bAttachToParent_SetBit, METADATA_PARAMS(Z_Construct_UClass_UDuplicateSpecialSettings_Statics::NewProp_bAttachToParent_MetaData, ARRAY_COUNT(Z_Construct_UClass_UDuplicateSpecialSettings_Statics::NewProp_bAttachToParent_MetaData)) };
+	const UE4CodeGen_Private::FBoolPropertyParams Z_Construct_UClass_UDuplicateSpecialSettings_Statics::NewProp_bAttachToParent = { "bAttachToParent", nullptr, (EPropertyFlags)0x0020080000000001, UE4CodeGen_Private::EPropertyGenFlags::Bool | UE4CodeGen_Private::EPropertyGenFlags::NativeBool, RF_Public|RF_Transient|RF_MarkAsNative, 1, sizeof(bool), sizeof(UDuplicateSpecialSettings), &Z_Construct_UClass_UDuplicateSpecialSettings_Statics::NewProp_bAttachToParent_SetBit, METADATA_PARAMS(Z_Construct_UClass_UDuplicateSpecialSettings_Statics::NewProp_bAttachToParent_MetaData, UE_ARRAY_COUNT(Z_Construct_UClass_UDuplicateSpecialSettings_Statics::NewProp_bAttachToParent_MetaData)) };
 #if WITH_METADATA
 	const UE4CodeGen_Private::FMetaDataPairParam Z_Construct_UClass_UDuplicateSpecialSettings_Statics::NewProp_FolderPathName_MetaData[] = {
 		{ "Category", "Duplication Options" },
+		{ "Comment", "/** Creates new folders for the given path name in the outliner. If part of the path already exists, places duplicate actors under the existing folder. */" },
 		{ "EditCondition", "bCreateNewOutlinerFolder" },
 		{ "ModuleRelativePath", "Public/DuplicateSpecialSettings.h" },
 		{ "ToolTip", "Creates new folders for the given path name in the outliner. If part of the path already exists, places duplicate actors under the existing folder." },
 	};
 #endif
-	const UE4CodeGen_Private::FNamePropertyParams Z_Construct_UClass_UDuplicateSpecialSettings_Statics::NewProp_FolderPathName = { UE4CodeGen_Private::EPropertyClass::Name, "FolderPathName", RF_Public|RF_Transient|RF_MarkAsNative, (EPropertyFlags)0x0020080000000001, 1, nullptr, STRUCT_OFFSET(UDuplicateSpecialSettings, FolderPathName), METADATA_PARAMS(Z_Construct_UClass_UDuplicateSpecialSettings_Statics::NewProp_FolderPathName_MetaData, ARRAY_COUNT(Z_Construct_UClass_UDuplicateSpecialSettings_Statics::NewProp_FolderPathName_MetaData)) };
+	const UE4CodeGen_Private::FNamePropertyParams Z_Construct_UClass_UDuplicateSpecialSettings_Statics::NewProp_FolderPathName = { "FolderPathName", nullptr, (EPropertyFlags)0x0020080000000001, UE4CodeGen_Private::EPropertyGenFlags::Name, RF_Public|RF_Transient|RF_MarkAsNative, 1, STRUCT_OFFSET(UDuplicateSpecialSettings, FolderPathName), METADATA_PARAMS(Z_Construct_UClass_UDuplicateSpecialSettings_Statics::NewProp_FolderPathName_MetaData, UE_ARRAY_COUNT(Z_Construct_UClass_UDuplicateSpecialSettings_Statics::NewProp_FolderPathName_MetaData)) };
 #if WITH_METADATA
 	const UE4CodeGen_Private::FMetaDataPairParam Z_Construct_UClass_UDuplicateSpecialSettings_Statics::NewProp_bCreateNewOutlinerFolder_MetaData[] = {
 		{ "Category", "Duplication Options" },
+		{ "Comment", "/** If true, duplicate actors are placed under the new folder. */" },
 		{ "DisplayName", "Create New Outliner Folder" },
 		{ "ModuleRelativePath", "Public/DuplicateSpecialSettings.h" },
 		{ "ToolTip", "If true, duplicate actors are placed under the new folder." },
@@ -140,10 +144,11 @@ void EmptyLinkFunctionForGeneratedCodeDuplicateSpecialSettings() {}
 	{
 		((UDuplicateSpecialSettings*)Obj)->bCreateNewOutlinerFolder = 1;
 	}
-	const UE4CodeGen_Private::FBoolPropertyParams Z_Construct_UClass_UDuplicateSpecialSettings_Statics::NewProp_bCreateNewOutlinerFolder = { UE4CodeGen_Private::EPropertyClass::Bool, "bCreateNewOutlinerFolder", RF_Public|RF_Transient|RF_MarkAsNative, (EPropertyFlags)0x0020080000000001, 1, nullptr, sizeof(bool), UE4CodeGen_Private::ENativeBool::Native, sizeof(UDuplicateSpecialSettings), &Z_Construct_UClass_UDuplicateSpecialSettings_Statics::NewProp_bCreateNewOutlinerFolder_SetBit, METADATA_PARAMS(Z_Construct_UClass_UDuplicateSpecialSettings_Statics::NewProp_bCreateNewOutlinerFolder_MetaData, ARRAY_COUNT(Z_Construct_UClass_UDuplicateSpecialSettings_Statics::NewProp_bCreateNewOutlinerFolder_MetaData)) };
+	const UE4CodeGen_Private::FBoolPropertyParams Z_Construct_UClass_UDuplicateSpecialSettings_Statics::NewProp_bCreateNewOutlinerFolder = { "bCreateNewOutlinerFolder", nullptr, (EPropertyFlags)0x0020080000000001, UE4CodeGen_Private::EPropertyGenFlags::Bool | UE4CodeGen_Private::EPropertyGenFlags::NativeBool, RF_Public|RF_Transient|RF_MarkAsNative, 1, sizeof(bool), sizeof(UDuplicateSpecialSettings), &Z_Construct_UClass_UDuplicateSpecialSettings_Statics::NewProp_bCreateNewOutlinerFolder_SetBit, METADATA_PARAMS(Z_Construct_UClass_UDuplicateSpecialSettings_Statics::NewProp_bCreateNewOutlinerFolder_MetaData, UE_ARRAY_COUNT(Z_Construct_UClass_UDuplicateSpecialSettings_Statics::NewProp_bCreateNewOutlinerFolder_MetaData)) };
 #if WITH_METADATA
 	const UE4CodeGen_Private::FMetaDataPairParam Z_Construct_UClass_UDuplicateSpecialSettings_Statics::NewProp_bSelectDuplicated_MetaData[] = {
 		{ "Category", "Duplication Options" },
+		{ "Comment", "/** If true, selection is set to the duplicate actors at the end of the duplication process. */" },
 		{ "DisplayName", "Select Duplicated Actors" },
 		{ "ModuleRelativePath", "Public/DuplicateSpecialSettings.h" },
 		{ "ToolTip", "If true, selection is set to the duplicate actors at the end of the duplication process." },
@@ -153,17 +158,18 @@ void EmptyLinkFunctionForGeneratedCodeDuplicateSpecialSettings() {}
 	{
 		((UDuplicateSpecialSettings*)Obj)->bSelectDuplicated = 1;
 	}
-	const UE4CodeGen_Private::FBoolPropertyParams Z_Construct_UClass_UDuplicateSpecialSettings_Statics::NewProp_bSelectDuplicated = { UE4CodeGen_Private::EPropertyClass::Bool, "bSelectDuplicated", RF_Public|RF_Transient|RF_MarkAsNative, (EPropertyFlags)0x0020080000000001, 1, nullptr, sizeof(bool), UE4CodeGen_Private::ENativeBool::Native, sizeof(UDuplicateSpecialSettings), &Z_Construct_UClass_UDuplicateSpecialSettings_Statics::NewProp_bSelectDuplicated_SetBit, METADATA_PARAMS(Z_Construct_UClass_UDuplicateSpecialSettings_Statics::NewProp_bSelectDuplicated_MetaData, ARRAY_COUNT(Z_Construct_UClass_UDuplicateSpecialSettings_Statics::NewProp_bSelectDuplicated_MetaData)) };
+	const UE4CodeGen_Private::FBoolPropertyParams Z_Construct_UClass_UDuplicateSpecialSettings_Statics::NewProp_bSelectDuplicated = { "bSelectDuplicated", nullptr, (EPropertyFlags)0x0020080000000001, UE4CodeGen_Private::EPropertyGenFlags::Bool | UE4CodeGen_Private::EPropertyGenFlags::NativeBool, RF_Public|RF_Transient|RF_MarkAsNative, 1, sizeof(bool), sizeof(UDuplicateSpecialSettings), &Z_Construct_UClass_UDuplicateSpecialSettings_Statics::NewProp_bSelectDuplicated_SetBit, METADATA_PARAMS(Z_Construct_UClass_UDuplicateSpecialSettings_Statics::NewProp_bSelectDuplicated_MetaData, UE_ARRAY_COUNT(Z_Construct_UClass_UDuplicateSpecialSettings_Statics::NewProp_bSelectDuplicated_MetaData)) };
 #if WITH_METADATA
 	const UE4CodeGen_Private::FMetaDataPairParam Z_Construct_UClass_UDuplicateSpecialSettings_Statics::NewProp_Scale_MetaData[] = {
 		{ "Category", "Transforms" },
 		{ "ModuleRelativePath", "Public/DuplicateSpecialSettings.h" },
 	};
 #endif
-	const UE4CodeGen_Private::FStructPropertyParams Z_Construct_UClass_UDuplicateSpecialSettings_Statics::NewProp_Scale = { UE4CodeGen_Private::EPropertyClass::Struct, "Scale", RF_Public|RF_Transient|RF_MarkAsNative, (EPropertyFlags)0x0020080000000001, 1, nullptr, STRUCT_OFFSET(UDuplicateSpecialSettings, Scale), Z_Construct_UScriptStruct_FVector, METADATA_PARAMS(Z_Construct_UClass_UDuplicateSpecialSettings_Statics::NewProp_Scale_MetaData, ARRAY_COUNT(Z_Construct_UClass_UDuplicateSpecialSettings_Statics::NewProp_Scale_MetaData)) };
+	const UE4CodeGen_Private::FStructPropertyParams Z_Construct_UClass_UDuplicateSpecialSettings_Statics::NewProp_Scale = { "Scale", nullptr, (EPropertyFlags)0x0020080000000001, UE4CodeGen_Private::EPropertyGenFlags::Struct, RF_Public|RF_Transient|RF_MarkAsNative, 1, STRUCT_OFFSET(UDuplicateSpecialSettings, Scale), Z_Construct_UScriptStruct_FVector, METADATA_PARAMS(Z_Construct_UClass_UDuplicateSpecialSettings_Statics::NewProp_Scale_MetaData, UE_ARRAY_COUNT(Z_Construct_UClass_UDuplicateSpecialSettings_Statics::NewProp_Scale_MetaData)) };
 #if WITH_METADATA
 	const UE4CodeGen_Private::FMetaDataPairParam Z_Construct_UClass_UDuplicateSpecialSettings_Statics::NewProp_bScaleRelative_MetaData[] = {
 		{ "Category", "Transforms" },
+		{ "Comment", "/** If true, multiplies the actor's relative scale. If false, sets the actor's scale. */" },
 		{ "DisplayName", "Relative Scale" },
 		{ "ModuleRelativePath", "Public/DuplicateSpecialSettings.h" },
 		{ "ToolTip", "If true, multiplies the actor's relative scale. If false, sets the actor's scale." },
@@ -173,17 +179,18 @@ void EmptyLinkFunctionForGeneratedCodeDuplicateSpecialSettings() {}
 	{
 		((UDuplicateSpecialSettings*)Obj)->bScaleRelative = 1;
 	}
-	const UE4CodeGen_Private::FBoolPropertyParams Z_Construct_UClass_UDuplicateSpecialSettings_Statics::NewProp_bScaleRelative = { UE4CodeGen_Private::EPropertyClass::Bool, "bScaleRelative", RF_Public|RF_Transient|RF_MarkAsNative, (EPropertyFlags)0x0020080000000001, 1, nullptr, sizeof(bool), UE4CodeGen_Private::ENativeBool::Native, sizeof(UDuplicateSpecialSettings), &Z_Construct_UClass_UDuplicateSpecialSettings_Statics::NewProp_bScaleRelative_SetBit, METADATA_PARAMS(Z_Construct_UClass_UDuplicateSpecialSettings_Statics::NewProp_bScaleRelative_MetaData, ARRAY_COUNT(Z_Construct_UClass_UDuplicateSpecialSettings_Statics::NewProp_bScaleRelative_MetaData)) };
+	const UE4CodeGen_Private::FBoolPropertyParams Z_Construct_UClass_UDuplicateSpecialSettings_Statics::NewProp_bScaleRelative = { "bScaleRelative", nullptr, (EPropertyFlags)0x0020080000000001, UE4CodeGen_Private::EPropertyGenFlags::Bool | UE4CodeGen_Private::EPropertyGenFlags::NativeBool, RF_Public|RF_Transient|RF_MarkAsNative, 1, sizeof(bool), sizeof(UDuplicateSpecialSettings), &Z_Construct_UClass_UDuplicateSpecialSettings_Statics::NewProp_bScaleRelative_SetBit, METADATA_PARAMS(Z_Construct_UClass_UDuplicateSpecialSettings_Statics::NewProp_bScaleRelative_MetaData, UE_ARRAY_COUNT(Z_Construct_UClass_UDuplicateSpecialSettings_Statics::NewProp_bScaleRelative_MetaData)) };
 #if WITH_METADATA
 	const UE4CodeGen_Private::FMetaDataPairParam Z_Construct_UClass_UDuplicateSpecialSettings_Statics::NewProp_Rotation_MetaData[] = {
 		{ "Category", "Transforms" },
 		{ "ModuleRelativePath", "Public/DuplicateSpecialSettings.h" },
 	};
 #endif
-	const UE4CodeGen_Private::FStructPropertyParams Z_Construct_UClass_UDuplicateSpecialSettings_Statics::NewProp_Rotation = { UE4CodeGen_Private::EPropertyClass::Struct, "Rotation", RF_Public|RF_Transient|RF_MarkAsNative, (EPropertyFlags)0x0020080000000001, 1, nullptr, STRUCT_OFFSET(UDuplicateSpecialSettings, Rotation), Z_Construct_UScriptStruct_FRotator, METADATA_PARAMS(Z_Construct_UClass_UDuplicateSpecialSettings_Statics::NewProp_Rotation_MetaData, ARRAY_COUNT(Z_Construct_UClass_UDuplicateSpecialSettings_Statics::NewProp_Rotation_MetaData)) };
+	const UE4CodeGen_Private::FStructPropertyParams Z_Construct_UClass_UDuplicateSpecialSettings_Statics::NewProp_Rotation = { "Rotation", nullptr, (EPropertyFlags)0x0020080000000001, UE4CodeGen_Private::EPropertyGenFlags::Struct, RF_Public|RF_Transient|RF_MarkAsNative, 1, STRUCT_OFFSET(UDuplicateSpecialSettings, Rotation), Z_Construct_UScriptStruct_FRotator, METADATA_PARAMS(Z_Construct_UClass_UDuplicateSpecialSettings_Statics::NewProp_Rotation_MetaData, UE_ARRAY_COUNT(Z_Construct_UClass_UDuplicateSpecialSettings_Statics::NewProp_Rotation_MetaData)) };
 #if WITH_METADATA
 	const UE4CodeGen_Private::FMetaDataPairParam Z_Construct_UClass_UDuplicateSpecialSettings_Statics::NewProp_bRotateRelative_MetaData[] = {
 		{ "Category", "Transforms" },
+		{ "Comment", "/** If true, uses AddActorLocalRotation(). If false, uses AddActorWorldRotation(). */" },
 		{ "DisplayName", "Relative Rotation" },
 		{ "ModuleRelativePath", "Public/DuplicateSpecialSettings.h" },
 		{ "ToolTip", "If true, uses AddActorLocalRotation(). If false, uses AddActorWorldRotation()." },
@@ -193,17 +200,18 @@ void EmptyLinkFunctionForGeneratedCodeDuplicateSpecialSettings() {}
 	{
 		((UDuplicateSpecialSettings*)Obj)->bRotateRelative = 1;
 	}
-	const UE4CodeGen_Private::FBoolPropertyParams Z_Construct_UClass_UDuplicateSpecialSettings_Statics::NewProp_bRotateRelative = { UE4CodeGen_Private::EPropertyClass::Bool, "bRotateRelative", RF_Public|RF_Transient|RF_MarkAsNative, (EPropertyFlags)0x0020080000000001, 1, nullptr, sizeof(bool), UE4CodeGen_Private::ENativeBool::Native, sizeof(UDuplicateSpecialSettings), &Z_Construct_UClass_UDuplicateSpecialSettings_Statics::NewProp_bRotateRelative_SetBit, METADATA_PARAMS(Z_Construct_UClass_UDuplicateSpecialSettings_Statics::NewProp_bRotateRelative_MetaData, ARRAY_COUNT(Z_Construct_UClass_UDuplicateSpecialSettings_Statics::NewProp_bRotateRelative_MetaData)) };
+	const UE4CodeGen_Private::FBoolPropertyParams Z_Construct_UClass_UDuplicateSpecialSettings_Statics::NewProp_bRotateRelative = { "bRotateRelative", nullptr, (EPropertyFlags)0x0020080000000001, UE4CodeGen_Private::EPropertyGenFlags::Bool | UE4CodeGen_Private::EPropertyGenFlags::NativeBool, RF_Public|RF_Transient|RF_MarkAsNative, 1, sizeof(bool), sizeof(UDuplicateSpecialSettings), &Z_Construct_UClass_UDuplicateSpecialSettings_Statics::NewProp_bRotateRelative_SetBit, METADATA_PARAMS(Z_Construct_UClass_UDuplicateSpecialSettings_Statics::NewProp_bRotateRelative_MetaData, UE_ARRAY_COUNT(Z_Construct_UClass_UDuplicateSpecialSettings_Statics::NewProp_bRotateRelative_MetaData)) };
 #if WITH_METADATA
 	const UE4CodeGen_Private::FMetaDataPairParam Z_Construct_UClass_UDuplicateSpecialSettings_Statics::NewProp_Translate_MetaData[] = {
 		{ "Category", "Transforms" },
 		{ "ModuleRelativePath", "Public/DuplicateSpecialSettings.h" },
 	};
 #endif
-	const UE4CodeGen_Private::FStructPropertyParams Z_Construct_UClass_UDuplicateSpecialSettings_Statics::NewProp_Translate = { UE4CodeGen_Private::EPropertyClass::Struct, "Translate", RF_Public|RF_Transient|RF_MarkAsNative, (EPropertyFlags)0x0020080000000001, 1, nullptr, STRUCT_OFFSET(UDuplicateSpecialSettings, Translate), Z_Construct_UScriptStruct_FVector, METADATA_PARAMS(Z_Construct_UClass_UDuplicateSpecialSettings_Statics::NewProp_Translate_MetaData, ARRAY_COUNT(Z_Construct_UClass_UDuplicateSpecialSettings_Statics::NewProp_Translate_MetaData)) };
+	const UE4CodeGen_Private::FStructPropertyParams Z_Construct_UClass_UDuplicateSpecialSettings_Statics::NewProp_Translate = { "Translate", nullptr, (EPropertyFlags)0x0020080000000001, UE4CodeGen_Private::EPropertyGenFlags::Struct, RF_Public|RF_Transient|RF_MarkAsNative, 1, STRUCT_OFFSET(UDuplicateSpecialSettings, Translate), Z_Construct_UScriptStruct_FVector, METADATA_PARAMS(Z_Construct_UClass_UDuplicateSpecialSettings_Statics::NewProp_Translate_MetaData, UE_ARRAY_COUNT(Z_Construct_UClass_UDuplicateSpecialSettings_Statics::NewProp_Translate_MetaData)) };
 #if WITH_METADATA
 	const UE4CodeGen_Private::FMetaDataPairParam Z_Construct_UClass_UDuplicateSpecialSettings_Statics::NewProp_bTranslateRelative_MetaData[] = {
 		{ "Category", "Transforms" },
+		{ "Comment", "/** If true, uses AddActorLocalOffset(). If false, uses AddActorWorldOffset(). */" },
 		{ "DisplayName", "Relative Translation" },
 		{ "ModuleRelativePath", "Public/DuplicateSpecialSettings.h" },
 		{ "ToolTip", "If true, uses AddActorLocalOffset(). If false, uses AddActorWorldOffset()." },
@@ -213,7 +221,7 @@ void EmptyLinkFunctionForGeneratedCodeDuplicateSpecialSettings() {}
 	{
 		((UDuplicateSpecialSettings*)Obj)->bTranslateRelative = 1;
 	}
-	const UE4CodeGen_Private::FBoolPropertyParams Z_Construct_UClass_UDuplicateSpecialSettings_Statics::NewProp_bTranslateRelative = { UE4CodeGen_Private::EPropertyClass::Bool, "bTranslateRelative", RF_Public|RF_Transient|RF_MarkAsNative, (EPropertyFlags)0x0020080000000001, 1, nullptr, sizeof(bool), UE4CodeGen_Private::ENativeBool::Native, sizeof(UDuplicateSpecialSettings), &Z_Construct_UClass_UDuplicateSpecialSettings_Statics::NewProp_bTranslateRelative_SetBit, METADATA_PARAMS(Z_Construct_UClass_UDuplicateSpecialSettings_Statics::NewProp_bTranslateRelative_MetaData, ARRAY_COUNT(Z_Construct_UClass_UDuplicateSpecialSettings_Statics::NewProp_bTranslateRelative_MetaData)) };
+	const UE4CodeGen_Private::FBoolPropertyParams Z_Construct_UClass_UDuplicateSpecialSettings_Statics::NewProp_bTranslateRelative = { "bTranslateRelative", nullptr, (EPropertyFlags)0x0020080000000001, UE4CodeGen_Private::EPropertyGenFlags::Bool | UE4CodeGen_Private::EPropertyGenFlags::NativeBool, RF_Public|RF_Transient|RF_MarkAsNative, 1, sizeof(bool), sizeof(UDuplicateSpecialSettings), &Z_Construct_UClass_UDuplicateSpecialSettings_Statics::NewProp_bTranslateRelative_SetBit, METADATA_PARAMS(Z_Construct_UClass_UDuplicateSpecialSettings_Statics::NewProp_bTranslateRelative_MetaData, UE_ARRAY_COUNT(Z_Construct_UClass_UDuplicateSpecialSettings_Statics::NewProp_bTranslateRelative_MetaData)) };
 	const UE4CodeGen_Private::FPropertyParamsBase* const Z_Construct_UClass_UDuplicateSpecialSettings_Statics::PropPointers[] = {
 		(const UE4CodeGen_Private::FPropertyParamsBase*)&Z_Construct_UClass_UDuplicateSpecialSettings_Statics::NewProp_NumberOfCopies,
 		(const UE4CodeGen_Private::FPropertyParamsBase*)&Z_Construct_UClass_UDuplicateSpecialSettings_Statics::NewProp_bAttachToParent,
@@ -232,14 +240,18 @@ void EmptyLinkFunctionForGeneratedCodeDuplicateSpecialSettings() {}
 	};
 	const UE4CodeGen_Private::FClassParams Z_Construct_UClass_UDuplicateSpecialSettings_Statics::ClassParams = {
 		&UDuplicateSpecialSettings::StaticClass,
-		DependentSingletons, ARRAY_COUNT(DependentSingletons),
-		0x000000A0u,
-		nullptr, 0,
-		Z_Construct_UClass_UDuplicateSpecialSettings_Statics::PropPointers, ARRAY_COUNT(Z_Construct_UClass_UDuplicateSpecialSettings_Statics::PropPointers),
 		nullptr,
 		&StaticCppClassTypeInfo,
-		nullptr, 0,
-		METADATA_PARAMS(Z_Construct_UClass_UDuplicateSpecialSettings_Statics::Class_MetaDataParams, ARRAY_COUNT(Z_Construct_UClass_UDuplicateSpecialSettings_Statics::Class_MetaDataParams))
+		DependentSingletons,
+		nullptr,
+		Z_Construct_UClass_UDuplicateSpecialSettings_Statics::PropPointers,
+		nullptr,
+		UE_ARRAY_COUNT(DependentSingletons),
+		0,
+		UE_ARRAY_COUNT(Z_Construct_UClass_UDuplicateSpecialSettings_Statics::PropPointers),
+		0,
+		0x000000A0u,
+		METADATA_PARAMS(Z_Construct_UClass_UDuplicateSpecialSettings_Statics::Class_MetaDataParams, UE_ARRAY_COUNT(Z_Construct_UClass_UDuplicateSpecialSettings_Statics::Class_MetaDataParams))
 	};
 	UClass* Z_Construct_UClass_UDuplicateSpecialSettings()
 	{
@@ -250,7 +262,11 @@ void EmptyLinkFunctionForGeneratedCodeDuplicateSpecialSettings() {}
 		}
 		return OuterClass;
 	}
-	IMPLEMENT_CLASS(UDuplicateSpecialSettings, 3644852564);
+	IMPLEMENT_CLASS(UDuplicateSpecialSettings, 2196264599);
+	template<> DUPLICATESPECIAL_API UClass* StaticClass<UDuplicateSpecialSettings>()
+	{
+		return UDuplicateSpecialSettings::StaticClass();
+	}
 	static FCompiledInDefer Z_CompiledInDefer_UClass_UDuplicateSpecialSettings(Z_Construct_UClass_UDuplicateSpecialSettings, &UDuplicateSpecialSettings::StaticClass, TEXT("/Script/DuplicateSpecial"), TEXT("UDuplicateSpecialSettings"), false, nullptr, nullptr, nullptr);
 	DEFINE_VTABLE_PTR_HELPER_CTOR(UDuplicateSpecialSettings);
 PRAGMA_ENABLE_DEPRECATION_WARNINGS
